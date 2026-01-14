@@ -4,4 +4,4 @@ This repository contains spoilers for the exercises in *The C Programming Langua
 
 ## Citation
 
-Kernighan, Brian W., and Dennis M. Ritchie. *The C Programming Language*. 2. ed., 52. print, Prentice-Hall PTR, 2014. Prentice-Hall Software Series.
+Kernighan, Brian W., and Dennis M. Ritchie. *The C Programming Language*. 2nd ed., Prentice-Hall PTR, 1988. Prentice-Hall Software Series.
