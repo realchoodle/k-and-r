@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+#define IN    1
+#define OUT   0
+#define LIMIT 32
+
+/* Exercise 1-13: Write a program to print a histogram of the lengths of words in its input. It is easy to draw the
+ * histogram with the bars horizontal; a vertical orientation is more challenging. */
+
+main()
+{
+    int wlens[LIMIT];
+    int i, n, nchar, wcount, ccount, bcount, state;
+
+    state = OUT;
+    wcount = 0;
+    bcount = 0;
+    ccount = 0;
+    for (i = 0; i < LIMIT; ++i)
+        wlens[i] = 0;
+
+    printf("\nThe input limit is 32 words; please do not input more than 32 words.\n\n"); /* Could probably use the macro through formatting. */
+    
+    while ((nchar = getchar()) != EOF) {
+        if (nchar == ' ' || nchar == '\n' || nchar == '\t') {
+            state = OUT;
+            ++bcount; /* I will likely need to count blanks for the histogram. */
+        }
+        else {
+            state = IN; /* We must be in a word. Enter IN/counting state. Leave IN for OUT once finished. */
+            if (nchar != ' ' && nchar != '\n' && nchar != '\t')
+                ++ccount;
+            else
+                state = OUT;
+        }
+        if (state == OUT && ccount > 0) {
+            wlens[wcount] = ccount;
+            ++wcount;
+            ccount = 0;
+        }
+    }
+
+    for (n = 0; n < LIMIT; ++n)
+        printf(" %d", wlens[n]);
+    putchar('\n');
+}
+
+/* this was in the else
+ *             ++ccount;
+ *          if (state == OUT) {
+ *              state = IN;
+ *              wlens[wcount] = ccount;
+ *              ++wcount;
+ *          }
+*/
