@@ -41,6 +41,7 @@ main()
     }
 
     for (n = 0; n < LIMIT; ++n)
-        printf(" %d", wlens[n]);
+        if (wlens[n] > 0)
+            printf(" %d", wlens[n]);
     putchar('\n');
 }
