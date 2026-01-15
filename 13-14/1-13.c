@@ -19,7 +19,7 @@ main()
     for (i = 0; i < LIMIT; ++i)
         wlens[i] = 0;
 
-    printf("\nThe input limit is 32 words; please do not input more than 32 words.\n\n"); /* Could probably use the macro through formatting. */
+    printf("\nThe input limit is %d words; please do not input more than %d words.\n\n", LIMIT, LIMIT);
     
     while ((nchar = getchar()) != EOF) {
         if (nchar == ' ' || nchar == '\n' || nchar == '\t') {
