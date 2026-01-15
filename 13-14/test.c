@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* This is not an exercise; I was testing what I could do with arrays. */
+
 main()
 {
     int array[3];
