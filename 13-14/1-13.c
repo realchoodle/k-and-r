@@ -44,12 +44,3 @@ main()
         printf(" %d", wlens[n]);
     putchar('\n');
 }
-
-/* this was in the else
- *             ++ccount;
- *          if (state == OUT) {
- *              state = IN;
- *              wlens[wcount] = ccount;
- *              ++wcount;
- *          }
-*/
